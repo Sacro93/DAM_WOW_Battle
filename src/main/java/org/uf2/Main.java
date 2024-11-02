@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        DatosHeroes datosHeroes = new DatosHeroes();
-        SerializarHeroe serializarHeroe = new SerializarHeroe();
 
+        SerializarHeroe serializarHeroe = new SerializarHeroe();
+        DatosHeroes datosHeroes = serializarHeroe.deserializarHeroes();
         boolean salir = false;
         Scanner sc = new Scanner(System.in);
 

@@ -35,20 +35,55 @@ public class DatosHeroes implements Serializable {
 
 
     }
+//metodo para comparar si el personaje que se quiere crear
+// tiene el mismo nombre que uno que ya este en la lista
 
+    public boolean personajeExistente(Heroe comparar) {
+        for (Druida druida : druidas) {
+            if (druida.getNombre().equals(comparar.getNombre())) {
+                return true;
+            }
+        }
+        for (Arquemaga arquemaga : arquemagas) {
+            if (arquemaga.getNombre().equals(comparar.getNombre())) {
+                return true;
+            }
+        }
+        for (GuerreroOrco guerreroOrco : guerreros) {
+            if (guerreroOrco.getNombre().equals(comparar.getNombre())) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     //metodos para agregar nuevos heroes
-    public void agregarDruida (Druida druida){
+    public void agregarDruida(Druida druida) {
         druidas.add(druida);
     }
-    public void agregarArquemaga(Arquemaga arquemaga){
+
+    public void agregarArquemaga(Arquemaga arquemaga) {
         arquemagas.add(arquemaga);
     }
-    public void agregarGuerrero(GuerreroOrco guerrero){
+
+    public void agregarGuerrero(GuerreroOrco guerrero) {
         guerreros.add(guerrero);
     }
+
     public void setDruidas(List<Druida> druidas) {
         this.druidas = druidas;
+    }
+
+    public List<Druida> getDruidas() {
+        return druidas;
+    }
+
+    public List<Arquemaga> getArquemagas() {
+        return arquemagas;
+    }
+
+    public List<GuerreroOrco> getGuerreros() {
+        return guerreros;
     }
 
     public void setArquemagas(List<Arquemaga> arquemagas) {

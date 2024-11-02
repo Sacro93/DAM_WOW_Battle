@@ -71,29 +71,48 @@ public class Heroe implements Serializable {
 
         switch (opcion) {
             case 1:
-                System.out.println("Elegiste Druida, ingresale un nombre");
-                String nombreDruida = sc.nextLine();
-                Druida druidaNuevo = new Druida(nombreDruida);
+                String nombreDruida;
+                Druida druidaNuevo;
+                do {
+                    System.out.println("Elegiste Druida, ingresale un nombre");
+                    nombreDruida = sc.nextLine();
+                    druidaNuevo = new Druida(nombreDruida);
+                    if (datosHeroes.personajeExistente(druidaNuevo)) {
+                        System.out.println("Personaje ya existente, reintentar con otro nombre.");
+                    }
+                } while (datosHeroes.personajeExistente(druidaNuevo));
                 datosHeroes.agregarDruida(druidaNuevo);
                 break;
             case 2:
-                System.out.println("Elegiste Arquemaga, ingresale un nombre");
-                String nombreArquemaga = sc.nextLine();
-                Druida arquemagaNueva = new Druida(nombreArquemaga);
-                datosHeroes.agregarDruida(arquemagaNueva);
+                String nombreArquemaga;
+                Arquemaga nuevaArquemaga;
+                do {
+                    System.out.println("Elegiste Arquemaga, ingresale un nombre");
+                    nombreArquemaga = sc.nextLine();
+                    nuevaArquemaga = new Arquemaga(nombreArquemaga);
+                    if (datosHeroes.personajeExistente(nuevaArquemaga)) {
+                        System.out.println("Personaje ya existente, reintentar con otro nombre.");
+                    }
+                } while (datosHeroes.personajeExistente(nuevaArquemaga));
+                datosHeroes.agregarArquemaga(nuevaArquemaga);
                 break;
             case 3:
-                System.out.println("Elegiste Guerrero Orco, ingresale un nombre");
                 String nombreGuerrero = sc.nextLine();
-                Druida guerreroNuevo = new Druida(nombreGuerrero);
-                datosHeroes.agregarDruida(guerreroNuevo);
+                GuerreroOrco nuevoGuerrero;
+                do {
+                    System.out.println("Elegiste Guerrero Orco, ingresale un nombre");
+                    nuevoGuerrero = new GuerreroOrco(nombreGuerrero);
+                    if (datosHeroes.personajeExistente(nuevoGuerrero)) {
+                        System.out.println("Personaje ya existente, reintentar con otro nombre.");
+                    }
+                } while (datosHeroes.personajeExistente(nuevoGuerrero));
+                datosHeroes.agregarGuerrero(nuevoGuerrero);
                 break;
-
             default:
                 System.out.println("Ingrece una opcion valida");
         }
 
-        //leer que no sea duplicado al que este dentro del listado
+
 
         // guardar al archivo serializado "listadoHeroes.ser"
     }
