@@ -13,6 +13,22 @@ package org.uf2;
 
 public class GuerreroOrco extends Heroe {
 
+    @Override
+    public String toString() {
+        return "GuerreroOrco{" +
+                "nombre='" + nombre + '\'' +
+                ", fuerza=" + fuerza +
+                ", defensa=" + defensa +
+                ", agilidad=" + agilidad +
+                ", inteligencia=" + inteligencia +
+                ", resistencia=" + resistencia +
+                ", puntosVida=" + puntosVida +
+                ", combatesGanados=" + combatesGanados +
+                ", combatesPerdidos=" + combatesPerdidos +
+                ", puntosBatalla=" + puntosBatalla +
+                '}';
+    }
+
     public GuerreroOrco(String nombre) {
 
         super(nombre,

@@ -1,10 +1,6 @@
 package org.uf2;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class SerializarHeroe {
 
@@ -27,5 +23,18 @@ public class SerializarHeroe {
             e.printStackTrace();
         }
         return datosHeroes;
+    }
+
+    public void eliminarArchivoSerializado() {
+        File archivo = new File("listadoHeroes.ser");
+        if (archivo.exists()) {
+            if (archivo.delete()) {
+                System.out.println("Archivo serializado eliminado con éxito.");
+            } else {
+                System.out.println("Error al eliminar el archivo serializado.");
+            }
+        } else {
+            System.out.println("El archivo serializado no existe.");
+        }
     }
 }

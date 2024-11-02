@@ -16,4 +16,20 @@ public class Druida extends Heroe {
                 0
         );
     }
+
+    @Override
+    public String toString() {
+        return "Druida{" +
+                "nombre='" + nombre + '\'' +
+                ", fuerza=" + fuerza +
+                ", defensa=" + defensa +
+                ", agilidad=" + agilidad +
+                ", inteligencia=" + inteligencia +
+                ", resistencia=" + resistencia +
+                ", puntosVida=" + puntosVida +
+                ", combatesGanados=" + combatesGanados +
+                ", combatesPerdidos=" + combatesPerdidos +
+                ", puntosBatalla=" + puntosBatalla +
+                '}';
+    }
 }

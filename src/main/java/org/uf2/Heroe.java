@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Heroe implements Serializable {
+    private static final long serialVersionUID = 8875008047544007813L;
     public String nombre;
     public int fuerza;
     public int defensa;
@@ -112,9 +113,6 @@ public class Heroe implements Serializable {
                 System.out.println("Ingrece una opcion valida");
         }
 
-
-
-        // guardar al archivo serializado "listadoHeroes.ser"
     }
 
     public String getNombre() {
