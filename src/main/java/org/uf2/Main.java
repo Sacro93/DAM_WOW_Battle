@@ -6,24 +6,24 @@ public class Main {
     public static void main(String[] args) {
 
         SerializarHeroe serializarHeroe = new SerializarHeroe();
+        DatosHeroes datosHeroes = serializarHeroe.deserializarHeroes();
 
         // Eliminar el archivo serializado si es necesario
 
        // serializarHeroe.eliminarArchivoSerializado();
 
-        DatosHeroes datosHeroes = serializarHeroe.deserializarHeroes();
+
 
         //consultado a IA =>
-        if (datosHeroes == null) {
-            datosHeroes = new DatosHeroes();
+        // Si los datos deserializados son nulos, inicializamos nuevos datos de héroes
+        if (datosHeroes == null) { datosHeroes = new DatosHeroes(); }
 
             boolean salir = false;
             Scanner sc = new Scanner(System.in);
 
-            int opcion = 0;
+
 
             while (!salir) {
-
 
                 System.out.println("1- Crear Personaje");
                 System.out.println("2-Borrar personaje");
@@ -31,9 +31,8 @@ public class Main {
                 System.out.println("4-Añade Superpoderes +100 fuerza , +100 Inteligencia, -50 Puntos de batalla");
                 System.out.println("5-Batalla");
 
-
                 try {
-                    opcion = sc.nextInt();
+                    int opcion = sc.nextInt();
                     sc.nextLine();
 
                     switch (opcion) {
@@ -75,4 +74,3 @@ public class Main {
         }
 
     }
-}

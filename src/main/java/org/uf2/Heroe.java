@@ -62,10 +62,7 @@ public class Heroe implements Serializable {
     public static void crearHeroe(DatosHeroes datosHeroes) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingresa una opcion " +
-                "1 - Druida/n" +
-                "2-Arquemaga/n" +
-                "3-Guerrero Orco/n");
+        System.out.println("Ingresa una opción:\n" + "1 - Druida\n" + "2 - Arquemaga\n" + "3 - Guerrero Orco");
 
         int opcion = sc.nextInt();
         sc.nextLine();
