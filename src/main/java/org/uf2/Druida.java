@@ -1,6 +1,8 @@
 package org.uf2;
 
-public class Druida extends Heroe {
+import java.io.Serializable;
+
+public class Druida extends Heroe implements Serializable {
 
     public Druida(String nombre) {
 

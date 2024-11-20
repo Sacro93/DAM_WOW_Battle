@@ -11,7 +11,9 @@ package org.uf2;
  ■ Combates perdidos: Inicialmente 0.
  ■ Puntos de batalla: Inicialmente 100*/
 
-public class GuerreroOrco extends Heroe {
+import java.io.Serializable;
+
+public class GuerreroOrco extends Heroe implements Serializable {
 
     @Override
     public String toString() {

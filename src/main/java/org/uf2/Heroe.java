@@ -1,5 +1,6 @@
 package org.uf2;
 
+
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
@@ -34,6 +35,7 @@ public class Heroe implements Serializable {
 
     static Random random = new Random();
 
+
     public static int fuerzaHeroe(int a, int b) {
         return a + random.nextInt(b);
     }
@@ -58,9 +60,19 @@ public class Heroe implements Serializable {
         return a + random.nextInt(b);
     }
 
+    public void sumarCombateGanados() {
+        this.combatesGanados++;
+    }
+
+    public void sumarCombatesPerdidos() {
+        this.combatesPerdidos++;
+    }
+
+    public void sumarPuntosDeBatalla(int puntos) {
+        this.puntosBatalla += puntos;
+    }
 
     public static void crearHeroe(DatosHeroes datosHeroes) {
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingresa una opción:\n" + "1 - Druida\n" + "2 - Arquemaga\n" + "3 - Guerrero Orco");
 
@@ -120,10 +132,6 @@ public class Heroe implements Serializable {
         return fuerza;
     }
 
-    public double getAgilidad() {
-        return agilidad;
-    }
-
     public double getInteligencia() {
         return inteligencia;
     }
@@ -142,5 +150,60 @@ public class Heroe implements Serializable {
 
     public int getCombatesPerdidos() {
         return puntosBatalla;
+    }
+
+    public int getDefensa() {
+        return defensa;
+    }
+
+    public int getAgilidad() {
+        return agilidad;
+    }
+
+    public int getResistencia() {
+        return resistencia;
+    }
+
+
+
+
+    public void setFuerza(int fuerza) {
+        this.fuerza = fuerza;
+    }
+
+    public void setDefensa(int defensa) {
+        this.defensa = defensa;
+    }
+
+    public void setAgilidad(int agilidad) {
+        this.agilidad = agilidad;
+    }
+
+    public void setInteligencia(int inteligencia) {
+        this.inteligencia = inteligencia;
+    }
+
+    public void setResistencia(int resistencia) {
+        this.resistencia = resistencia;
+    }
+
+    public void setPuntosVida(int puntosVida) {
+        this.puntosVida = puntosVida;
+    }
+
+    public void setCombatesGanados(int combatesGanados) {
+        this.combatesGanados = combatesGanados;
+    }
+
+    public int getPuntosBatalla() {
+        return puntosBatalla;
+    }
+
+    public void setCombatesPerdidos(int combatesPerdidos) {
+        this.combatesPerdidos = combatesPerdidos;
+    }
+
+    public void setPuntosBatalla(int puntosBatalla) {
+        this.puntosBatalla = puntosBatalla;
     }
 }

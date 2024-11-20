@@ -1,5 +1,7 @@
 package org.uf2;
 
+import java.io.Serializable;
+
 /*Arquemaga:
  ○ Atributos:
  ■ Nombre
@@ -10,7 +12,7 @@ package org.uf2;
  ■ Combates ganados: Inicialmente 0.
  ■ Combates perdidos: Inicialmente 0.
  ■ Puntos de batalla: Inicialmente 100.*/
-public class Arquemaga extends Heroe {
+public class Arquemaga extends Heroe implements Serializable {
 
     public Arquemaga(String nombre) {
 
