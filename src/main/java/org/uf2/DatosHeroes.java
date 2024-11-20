@@ -241,7 +241,7 @@ public class DatosHeroes implements Serializable {
 
             druida.setInteligencia(nuevaInteligencia);
 
-            int puntosBatallaActualizado = (int) (druida.getPuntosBatalla() - puntosPlus);
+            int puntosBatallaActualizado = (int) (druida.getPuntosBatalla() - puntosRestar);
 
             druida.setPuntosBatalla(puntosBatallaActualizado);
 
@@ -259,7 +259,7 @@ public class DatosHeroes implements Serializable {
 
             arquemaga.setInteligencia(nuevaInteligencia);
 
-            int puntosBatallaActualizado = (int) (arquemaga.getPuntosBatalla() - puntosPlus);
+            int puntosBatallaActualizado = (int) (arquemaga.getPuntosBatalla() - puntosRestar);
 
             arquemaga.setPuntosBatalla(puntosBatallaActualizado);
 
@@ -275,7 +275,7 @@ public class DatosHeroes implements Serializable {
             int nuevaInteligencia = (int) (guerreroOrco.getInteligencia() + puntosPlus);
             guerreroOrco.setInteligencia(nuevaInteligencia);
 
-            int puntosBatallaActualizado = (int) (guerreroOrco.getPuntosBatalla() - puntosPlus);
+            int puntosBatallaActualizado = (int) (guerreroOrco.getPuntosBatalla() - puntosRestar);
             guerreroOrco.setPuntosBatalla(puntosBatallaActualizado);
             return true;
         }

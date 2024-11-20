@@ -8,8 +8,6 @@ public class Main {
         SerializarHeroe serializarHeroe = new SerializarHeroe();
         DatosHeroes datosHeroes = serializarHeroe.deserializarHeroes();
 
-
-        // Si los datos deserializados son nulos, inicializamos nuevos datos de héroes
        if (datosHeroes == null) {
             datosHeroes = new DatosHeroes(); }
 
@@ -25,7 +23,6 @@ public class Main {
                 System.out.println("4-Añade Superpoderes +100 fuerza , +100 Inteligencia, -50 Puntos de batalla");
                 System.out.println("5-Batalla");
                 System.out.println("6-Salir");
-
 
                 try {
                     int opcion = sc.nextInt();

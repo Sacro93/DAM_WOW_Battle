@@ -19,8 +19,6 @@ public class SerializarHeroe {
 
     public static DatosHeroes deserializarHeroes() {
         DatosHeroes datosHeroes = null;
-
-        // Verificar si el archivo existe antes de intentar deserializar
         File archivo = new File(NOMBRE_ARCHIVO);
         if (archivo.exists()) {
             try (FileInputStream fileInputStream = new FileInputStream(archivo);
@@ -33,7 +31,7 @@ public class SerializarHeroe {
                 datosHeroes = new DatosHeroes();
             }
         } else {
-            // Si el archivo no existe, inicializar una nueva instancia
+
             System.out.println("No se encontró el archivo, creando uno nuevo...");
             datosHeroes = new DatosHeroes();
         }
