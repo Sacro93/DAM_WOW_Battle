@@ -1,4 +1,4 @@
-# WOW-Batalla-Heroes
+### WOW-Batalla-Heroes
 
 ## Descripción parte por parte
 En este proyecto, comencé por la creación de la clase `Heroe`, que implementa la interfaz `Serializable`.
@@ -28,7 +28,7 @@ Las subclases son 'GuerreroOrco','Druida' y 'Arquemaga'
 ## Serializacion y deserializacion 
 La clase SerializarHeroe se encarga de la serialización y deserialización de objetos de la clase DatosHeroes.
 
-#Teoria : 
+##Teoria : 
 'La serialización es el proceso de convertir un objeto en una secuencia de bytes para que pueda ser guardado en un archivo,
 mientras que la deserialización es el proceso inverso, permitiendo recuperar el objeto original a partir de los bytes almacenados'
 
@@ -41,12 +41,12 @@ Se consulta en Stack oVerflow *1, se recomienda  verificar si el archivo existe 
 
 *1 https://es.stackoverflow.com/questions/264638/deserialize-en-java 
 
-# Clase DatosHeroes
+###Clase DatosHeroes
 
 La clase DatosHeroes tiene como fin gestionar los datos de los distintos tipos de heroes en el programa.Se implementa Serializable para permitir la 'serializacion',
 y asi facilitar la manipulacion y recuperacion de los datosde los heroes.
 
-Listas que almacenan las instancias de los distintos tipos de heroes : 
+#Listas que almacenan las instancias de los distintos tipos de heroes : 
 
       '  static List<Druida> druidas = new ArrayList<>(); 
         static List<Arquemaga> arquemagas = new ArrayList<>(); 
@@ -54,7 +54,7 @@ Listas que almacenan las instancias de los distintos tipos de heroes :
 
 El cosntructor 'DatosHeroes()' llama  al metodo 'cargarDatosHeroes()' que, como su nombre lo indica, me permite inicializar las listas con datos precargados
 
-#Metodos: 
+##Metodos: 
 
     'numeroHeroe(int numero)'  =>  permite acceder a los héroes por su indice propio.
    ' personajeExistente(Heroe comparar)' => Comprueba si un heroe ya existe en las listas.
@@ -64,12 +64,11 @@ El cosntructor 'DatosHeroes()' llama  al metodo 'cargarDatosHeroes()' que, como 
     'eliminarPersonajes(String nombreEliminar)' => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.
     'superPoder(int numeroElegido)' =>  metodo que aplica superpoder a un heroe por indice. *2
 
-2* Orientacion para funcion superPoder : 
-https://es.stackoverflow.com/questions/250311/como-eliminar-un-nodo-por-posici%c3%b3n-indice-de-una-lista-simple  
-https://barcelonageeks.com/eliminar-elemento-del-indice-especificado-en-java-arraylist/
+ # 2* Orientacion para funcion superPoder : 
+ # https://es.stackoverflow.com/questions/250311/como-eliminar-un-nodo-por-posici%c3%b3n-indice-de-una-lista-simple  
+# https://barcelonageeks.com/eliminar-elemento-del-indice-especificado-en-java-arraylist/
 
-
-#Clase Batalla
+###Clase Batalla
 
 La clase Batalla se encarga de gestionar las peleas entre dos heroes
 
