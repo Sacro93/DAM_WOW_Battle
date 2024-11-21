@@ -1,7 +1,5 @@
 # Combate Épico de Héroes: Desafío en la Arena - Edición World of Warcraft
 
-# Explicacion del codigo en el Readme de la carpeta => src/main/java/org/uf2 
-
 ## Descripción
 Entra en un mundo lleno de magia, fuerza y estrategia, donde los héroes más poderosos de Azeroth se enfrentan en combates épicos. ¿Serás capaz de guiar a tu Druida, Arquemaga, Guerrero Orco o Paladín hacia la victoria en la arena?
 
@@ -82,5 +80,130 @@ El programa debe crear un archivo serializable donde se registre toda la informa
 ### Nota Importante
 - Si la práctica se realiza sin utilizar archivos, la calificación será un 0.
 - **Advertencia**: Cualquier uso de inteligencia artificial para resolver la práctica resultará en un 0 en la nota. Solo se pueden utilizar las técnicas aprendidas en clase.
+
+
+# WOW-Batalla-Heroes
+
+# Descripción del codigo parte por parte
+
+En este proyecto, comencé por la creación de la clase `Heroe`, que implementa la interfaz `Serializable`.
+La clase `Heroe` incluye una serie de atributos y métodos esenciales para el funcionamiento.
+
+Para asignar valores aleatorios a los atributos, utilicé un método Random() que se aplica a los métodos estáticos como `fuerzaHeroe()`, 
+`defensaHeroe()`,
+`agilidadHeroe()`,
+`inteligenciaHeroe()`, 
+`resistenciaHeroe()`, y `puntosVidaHeroe()`. Estos métodos generan valores aleatorios que se asignan a los atributos del héroe al momento de su creación.
+
+Otros métodos importantes en la clase `Heroe` que  inclui:
+## `sumarCombatesGanados()`: Incrementa el conteo de combates ganados .
+## `sumarCombatesPerdidos()`: Incrementa el conteo de combates perdidos.
+## `sumarPuntosDeBatalla()`: Suma puntos de batalla al héroe.
+
+# Creación de Héroes
+El método `crearHeroe()` toma como parámetro un objeto de la clase `DatosHeroes` (queimplementa `Serializable`). 
+Este método utiliza una estructura `switch` para elegir un nombre adecuado según los tres tipos de héroes existentes: Druida, Arquemaga y Guerrero Orco.
+
+A continuación se muestra un resumen del proceso de creación de héroes:
+
+# Creación de Clases de Héroes
+Se crearon varias subclases que extienden la clase `Heroe` y que también implementan la interfaz `Serializable`. 
+Las subclases son 'GuerreroOrco','Druida' y 'Arquemaga'  
+
+## Serializacion y deserializacion 
+La clase SerializarHeroe se encarga de la serialización y deserialización de objetos de la clase DatosHeroes.
+
+# Teoria : 
+'La serialización es el proceso de convertir un objeto en una secuencia de bytes para que pueda ser guardado en un archivo,
+mientras que la deserialización es el proceso inverso, permitiendo recuperar el objeto original a partir de los bytes almacenados'
+
+Se recomienda crear una constante que define el nombre del archivo en donde almacenare los datos serializados
+
+  private static final String NOMBRE_ARCHIVO = "listadoHeroesx.ser";#
+
+Dado que tenia inconvenientes para deserealizar. 
+Se consulta en Stack oVerflow *1, se recomienda  verificar si el archivo existe y sino se genera/ crea una nueva instancia.
+
+*1 https://es.stackoverflow.com/questions/264638/deserialize-en-java 
+
+# Clase DatosHeroes
+
+La clase DatosHeroes tiene como fin gestionar los datos de los distintos tipos de heroes en el programa.Se implementa Serializable para permitir la 'serializacion',
+y asi facilitar la manipulacion y recuperacion de los datosde los heroes.
+
+#Listas que almacenan las instancias de los distintos tipos de heroes : 
+
+      '  static List<Druida> druidas = new ArrayList<>(); 
+        static List<Arquemaga> arquemagas = new ArrayList<>(); 
+        static List<GuerreroOrco> guerreros = new ArrayList<>();'
+
+El cosntructor 'DatosHeroes()' llama  al metodo 'cargarDatosHeroes()' que, como su nombre lo indica, me permite inicializar las listas con datos precargados
+
+# Metodos: 
+
+    'numeroHeroe(int numero)'  =>  permite acceder a los héroes por su indice propio.
+   ' personajeExistente(Heroe comparar)' => Comprueba si un heroe ya existe en las listas.
+   ' listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .
+    'listarPersonajes()' => imprime una lista numerada de los personajes asi es mas facil seleccionarlos y no tener error de escritura al escribir por consola el nombre ( inconvenientes previos al ingresarlos por nombre)
+    'buscarHeroeNombre(String nombre) ' => metodo sin uso dado que me traia conflicto al escribir por nombre(indicado anteriormente). 
+    'eliminarPersonajes(String nombreEliminar)' => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.
+    'superPoder(int numeroElegido)' =>  metodo que aplica superpoder a un heroe por indice. *2
+
+  2* Orientacion para funcion superPoder : 
+  https://es.stackoverflow.com/questions/250311/como-eliminar-un-nodo-por-posici%c3%b3n-indice-de-una-lista-simple  
+  https://barcelonageeks.com/eliminar-elemento-del-indice-especificado-en-java-arraylist/
+
+# Clase Batalla
+
+La clase Batalla se encarga de gestionar las peleas entre dos heroes
+
+'batalla(Heroe heroe1, Heroe heroe2)' 
+ => La clase Random permite el factor 'suerte' que se solicitaba ç
+      '
+        Random suerteRandom = new Random();
+        int suerteDelHeroe1 = suerteRandom.nextInt(10) + 1; => Sumo 1, para que el rango este entre 1 y 10. Sino estaba entre 0 y 9.
+        int suerteDelHeroe2 = suerteRandom.nextInt(10) + 1;
+      '
+  => Combate en rondas  mientras los los heroes tengan puntos de vida mayores a 0 .  Se tiene en cuenta la fuerza,agilidad  y el 'factor suerte'. 
+      Los puntos de vida se actualizan por cada ronda.
+
+Como se calculan los ataques de ambos heroes 
+      ' 
+      int ataqueHeroe1 = (int) ((heroe1.getFuerza() + heroe1.getAgilidad() + suerteDelHeroe1) / 2); 
+      int ataqueHeroe2 = (int) ((heroe2.getFuerza() + heroe2.getAgilidad() + suerteDelHeroe2) / 2);
+      '
+
+* 'Orientacion para esta clase : '
+https://es.stackoverflow.com/questions/5390/como-generar-n%C3%BAmeros-aleatorios-dentro-de-un-rango-de-valores
+https://aprenderaprogramar.com/foros/index.php?topic=7889.0
+https://aprenderaprogramar.com/foros/index.php?topic=7893.0
+
+
+# Metodo Main 
+
+Utilizo la clase 'SerializarHeroe' para deserializar los datos de los heroes desde un archivo.
+
+    '
+      SerializarHeroe serializarHeroe = new SerializarHeroe(); 
+      DatosHeroes datosHeroes = serializarHeroe.deserializarHeroes();
+    '
+
+si hay datos nulos indico al sistema que inicialice nuevos datos de heroes'DatosHeroes()'
+
+#menu interactivo  con un bucle While.
+opciones : 
+
+1. Crear Personaje: Llama al metodo 'crearHeroe()' de la clase Heroe para crear un nuevo héroe y lo serializa.
+
+2. Borrar personaje: Lista los personajes por nombre, permite al usuario seleccionar uno para eliminar . No indique que se actualice por indice ya que estaba teniendo inconvenientes para realizarlo.
+
+3. Listar Personajes: Muestra todos los heroes
+
+4. Añade Superpoderes: Aplica un superpoder a un héroe seleccionado por su número/indice en la lista.
+
+5. Batalla: Organiza una batalla entre dos heroes seleccionados por el numero que puedes ver en la lista.
+
+6. Salir: Finaliza el programa.
+
 
   
