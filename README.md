@@ -132,7 +132,7 @@ Se consulta en Stack oVerflow `*1`, se recomienda  verificar si el archivo exist
 La clase DatosHeroes tiene como fin gestionar los datos de los distintos tipos de heroes en el programa.Se implementa Serializable para permitir la 'serializacion',
 y asi facilitar la manipulacion y recuperacion de los datosde los heroes.
 
-### Listas que almacenan las instancias de los distintos tipos de heroes : 
+## Listas que almacenan las instancias de los distintos tipos de heroes : 
 
       '  static List<Druida> druidas = new ArrayList<>(); 
         static List<Arquemaga> arquemagas = new ArrayList<>(); 
@@ -142,15 +142,22 @@ El cosntructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como 
 
 # Metodos: 
 
-  `numeroHeroe(int numero)  =>  permite acceder a los héroes por su indice propio.`
-   `personajeExistente(Heroe comparar) => Comprueba si un heroe ya existe en las listas.`
-   `listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .`
-   `listarPersonajes()' => imprime una lista numerada de los personajes asi es mas facil seleccionarlos y no tener error de escritura al escribir por consola el nombre ( inconvenientes previos al ingresarlos por nombre)`
-    `buscarHeroeNombre(String nombre) ' => metodo sin uso dado que me traia conflicto al escribir por nombre(indicado anteriormente). `
-    `eliminarPersonajes(String nombreEliminar) => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.`
-    `superPoder(int numeroElegido) =>  metodo que aplica superpoder a un heroe por indice. *2`
+  numeroHeroe(int numero)  =>  permite acceder a los héroes por su indice propio.
+  
+  ## personajeExistente(Heroe comparar) => Comprueba si un heroe ya existe en las listas.
+  
+  ## listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .
+  
+  ## listarPersonajes()' => imprime una lista numerada de los personajes asi es mas facil seleccionarlos y no tener error de escritura al escribir por consola el nombre ( inconvenientes previos al ingresarlos por nombre)
+ 
+  ##  buscarHeroeNombre(String nombre) ' => metodo sin uso dado que me traia conflicto al escribir por nombre(indicado anteriormente). 
+  
+  ## eliminarPersonajes(String nombreEliminar) => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.
+  
+  ## superPoder(int numeroElegido) =>  metodo que aplica superpoder a un heroe por indice. *2
 
-  `2*` Orientacion para funcion superPoder : 
+
+ ## `2*` Orientacion para funcion superPoder : 
   
   https://es.stackoverflow.com/questions/250311/como-eliminar-un-nodo-por-posici%c3%b3n-indice-de-una-lista-simple  
   
@@ -162,16 +169,16 @@ El cosntructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como 
 
 `batalla(Heroe heroe1, Heroe heroe2)'`
 
-### La clase Random permite el factor 'suerte' que se solicitaba 
+## La clase Random permite el factor 'suerte' que se solicitaba 
       `
         Random suerteRandom = new Random();
         int suerteDelHeroe1 = suerteRandom.nextInt(10) + 1; => Sumo 1, para que el rango este entre 1 y 10. Sino estaba entre 0 y 9.
         int suerteDelHeroe2 = suerteRandom.nextInt(10) + 1;
       `
-  ### Combate en rondas  mientras los los heroes tengan puntos de vida mayores a 0 .  Se tiene en cuenta la fuerza,agilidad  y el 'factor suerte'. 
+  ## Combate en rondas  mientras los los heroes tengan puntos de vida mayores a 0 .  Se tiene en cuenta la fuerza,agilidad  y el 'factor suerte'. 
       Los puntos de vida se actualizan por cada ronda.
 
-### Como se calculan los ataques de ambos heroes 
+## Como se calculan los ataques de ambos heroes 
       ` 
       int ataqueHeroe1 = (int) ((heroe1.getFuerza() + heroe1.getAgilidad() + suerteDelHeroe1) / 2); 
       int ataqueHeroe2 = (int) ((heroe2.getFuerza() + heroe2.getAgilidad() + suerteDelHeroe2) / 2);
