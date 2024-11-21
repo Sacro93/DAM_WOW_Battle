@@ -207,18 +207,28 @@ si hay datos nulos indico al sistema que inicialice nuevos datos de heroes`Datos
 # Menu interactivo  con un bucle While.
 
 ### Opciones : 
+![Menu](https://github.com/user-attachments/assets/60d50d86-d275-431a-bee7-ef98a3d26e07)
 
 1. Crear Personaje: Llama al metodo 'crearHeroe()' de la clase Heroe para crear un nuevo héroe y lo serializa.
+![Crear Personaje_opc1](https://github.com/user-attachments/assets/12bf9315-297e-4f5d-b9d9-ab27ea147c60)
 
 2. Borrar personaje: Lista los personajes por nombre, permite al usuario seleccionar uno para eliminar . No indique que se actualice por indice ya que estaba teniendo inconvenientes para realizarlo.
+![borrarHeroe_opc2](https://github.com/user-attachments/assets/2fca5996-08c9-4c27-a5d0-5b632ba02aea)
 
 3. Listar Personajes: Muestra todos los heroes
+![listarPersonajes_opcion3](https://github.com/user-attachments/assets/8f4d9e5b-4a37-49c2-a24e-4d5e15f08abc)
 
 4. Añade Superpoderes: Aplica un superpoder a un héroe seleccionado por su número/indice en la lista.
+![superPoder_opcion4](https://github.com/user-attachments/assets/cb311d7d-1346-4007-be0b-68114810eb73)
 
 5. Batalla: Organiza una batalla entre dos heroes seleccionados por el numero que puedes ver en la lista.
+![Batalla_opcion5_p1](https://github.com/user-attachments/assets/47cc800b-ccca-4e5f-b62d-582c4e897c0d)
+![Batalla_opcion5_p2](https://github.com/user-attachments/assets/7225a597-be23-4d17-89e9-7eceff72880c)
+![Batalla_opcion5_p3](https://github.com/user-attachments/assets/d4d4de11-22e3-480e-a536-f49c94bef7d9)
+![Batalla_opcion5_p4](https://github.com/user-attachments/assets/e2a9063c-e520-4f6a-864a-3f0e99eded3c)
 
-6. Salir: Finaliza el programa.
+
+7. Salir: Finaliza el programa.
 
 
   
