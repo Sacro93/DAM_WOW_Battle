@@ -121,7 +121,7 @@ mientras que la deserialización es el proceso inverso, permitiendo recuperar el
 
 Se recomienda crear una constante que define el nombre del archivo en donde almacenare los datos serializados
 
- ` private static final String NOMBRE_ARCHIVO = "listadoHeroesx.ser";` 
+** ` private static final String NOMBRE_ARCHIVO = "listadoHeroesx.ser";` **
  
 Se consulta en Stack oVerflow `*1`, se recomienda  verificar si el archivo existe y sino se genera/ crea una nueva instancia.
 
@@ -134,34 +134,34 @@ y asi facilitar la manipulacion y recuperacion de los datosde los heroes.
 
 ## Listas que almacenan las instancias de los distintos tipos de heroes : 
 
-      '  static List<Druida> druidas = new ArrayList<>(); 
+        static List<Druida> druidas = new ArrayList<>(); 
         static List<Arquemaga> arquemagas = new ArrayList<>(); 
-        static List<GuerreroOrco> guerreros = new ArrayList<>();'
+        static List<GuerreroOrco> guerreros = new ArrayList<>();
 
-El cosntructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como su nombre lo indica, me permite inicializar las listas con datos precargados
+El constructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como su nombre lo indica, me permite inicializar las listas con datos precargados.
 
 # Metodos: 
 
-###  numeroHeroe(int numero)  =>  permite acceder a los héroes por su indice propio.
+-  numeroHeroe(int numero)  =>  permite acceder a los héroes por su indice propio.
   
-  ### personajeExistente(Heroe comparar) => Comprueba si un heroe ya existe en las listas.
+- personajeExistente(Heroe comparar) => Comprueba si un heroe ya existe en las listas.
   
-  ## listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .
+  - listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .
   
-  ## listarPersonajes()' => imprime una lista numerada de los personajes asi es mas facil seleccionarlos y no tener error de escritura al escribir por consola el nombre ( inconvenientes previos al ingresarlos por nombre)
+  - listarPersonajes()' => imprime una lista numerada de los personajes asi es mas facil seleccionarlos y no tener error de escritura al escribir por consola el nombre ( inconvenientes previos al ingresarlos por nombre)
  
-  ##  buscarHeroeNombre(String nombre) ' => metodo sin uso dado que me traia conflicto al escribir por nombre(indicado anteriormente). 
+  - buscarHeroeNombre(String nombre) ' => metodo sin uso dado que me traia conflicto al escribir por nombre(indicado anteriormente). 
   
-  ## eliminarPersonajes(String nombreEliminar) => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.
+  - eliminarPersonajes(String nombreEliminar) => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.
   
-  ## superPoder(int numeroElegido) =>  metodo que aplica superpoder a un heroe por indice. *2
+  - superPoder(int numeroElegido) =>  metodo que aplica superpoder a un heroe por indice. *2
 
 
- ## `2*` Orientacion para funcion superPoder : 
+ ### `2*` Orientacion para funcion superPoder : 
   
-  https://es.stackoverflow.com/questions/250311/como-eliminar-un-nodo-por-posici%c3%b3n-indice-de-una-lista-simple  
+ - https://es.stackoverflow.com/questions/250311/como-eliminar-un-nodo-por-posici%c3%b3n-indice-de-una-lista-simple  
   
-  https://barcelonageeks.com/eliminar-elemento-del-indice-especificado-en-java-arraylist/
+ - https://barcelonageeks.com/eliminar-elemento-del-indice-especificado-en-java-arraylist/
 
 # Clase Batalla
 
@@ -169,14 +169,14 @@ El cosntructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como 
 
 `batalla(Heroe heroe1, Heroe heroe2)'`
 
-## La clase Random permite el factor 'suerte' que se solicitaba 
-      `
+### La clase Random permite el factor 'suerte' que se solicitaba 
+      
         Random suerteRandom = new Random();
         int suerteDelHeroe1 = suerteRandom.nextInt(10) + 1; => Sumo 1, para que el rango este entre 1 y 10. Sino estaba entre 0 y 9.
         int suerteDelHeroe2 = suerteRandom.nextInt(10) + 1;
-      `
-  ## Combate en rondas  mientras los los heroes tengan puntos de vida mayores a 0 .  Se tiene en cuenta la fuerza,agilidad  y el 'factor suerte'. 
-      Los puntos de vida se actualizan por cada ronda.
+      
+### Combate en rondas  mientras los los heroes tengan puntos de vida mayores a 0 .  Se tiene en cuenta la fuerza,agilidad  y el 'factor suerte'. (Los puntos de vida se actualizan por cada ronda.)
+      
 
 ## Como se calculan los ataques de ambos heroes 
       ` 
