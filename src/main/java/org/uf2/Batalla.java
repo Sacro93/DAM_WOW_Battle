@@ -37,16 +37,31 @@ public class Batalla {
 
         if (heroe1.getPuntosVida() > 0) {
             System.out.println(heroe1.getNombre() + " es el ganador");
+
             heroe1.sumarCombateGanados();
+            heroe1.sumarPuntosDeBatalla(50);
             heroe2.sumarCombatesPerdidos();
         } else {
             System.out.println(heroe2.getNombre() + " es el ganador");
             heroe1.sumarCombatesPerdidos();
             heroe2.sumarCombateGanados();
+            heroe2.sumarPuntosDeBatalla(50);
         }
 
+        if (heroe1.getPuntosVida() > 0) {
+            heroe1.sumarPuntosDeBatalla(50);
+        } else {
+            heroe2.sumarPuntosDeBatalla(50);
+        }
+        System.out.println("Resultado de la Batalla:");
+        System.out.println(heroe1.getNombre() + " Informacion de combates ganados por : " + heroe1.getNombre() + " " + heroe1.getCombatesGanados() +
+                ", Combates Perdidos: " + heroe1.getCombatesPerdidos() +
+                ", Puntos de Batalla: " + heroe1.getPuntosBatalla());
 
-        heroe1.sumarPuntosDeBatalla(heroe1.getPuntosVida() > 0 ? 50 : 0);
-        heroe2.sumarPuntosDeBatalla(heroe2.getPuntosVida() > 0 ? 50 : 0);
+        System.out.println(heroe2.getNombre() + " Informacion de combates ganados por " + " " + heroe2.getNombre() + "" + heroe2.getCombatesGanados() +
+                ", Combates Perdidos: " + heroe2.getCombatesPerdidos() + ", Puntos de Batalla: " + heroe2.getPuntosBatalla());
+
+
     }
 }
+

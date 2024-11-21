@@ -132,6 +132,14 @@ public class Heroe implements Serializable {
         return fuerza;
     }
 
+    public int getCombatesGanados() {
+        return combatesGanados;
+    }
+
+    public int getCombatesPerdidos() {
+        return combatesPerdidos;
+    }
+
     public double getInteligencia() {
         return inteligencia;
     }
@@ -140,68 +148,33 @@ public class Heroe implements Serializable {
         return puntosVida;
     }
 
-    public int getCombatesGanados() {
-        return combatesGanados;
-    }
-
-    public int getCombatesEmpatados() {
-        return combatesPerdidos;
-    }
-
-    public int getCombatesPerdidos() {
-        return puntosBatalla;
-    }
-
-    public int getDefensa() {
-        return defensa;
-    }
 
     public int getAgilidad() {
         return agilidad;
     }
-
-    public int getResistencia() {
-        return resistencia;
-    }
-
-
 
 
     public void setFuerza(int fuerza) {
         this.fuerza = fuerza;
     }
 
-    public void setDefensa(int defensa) {
-        this.defensa = defensa;
-    }
-
-    public void setAgilidad(int agilidad) {
-        this.agilidad = agilidad;
-    }
 
     public void setInteligencia(int inteligencia) {
         this.inteligencia = inteligencia;
     }
 
-    public void setResistencia(int resistencia) {
-        this.resistencia = resistencia;
-    }
+
 
     public void setPuntosVida(int puntosVida) {
         this.puntosVida = puntosVida;
     }
 
-    public void setCombatesGanados(int combatesGanados) {
-        this.combatesGanados = combatesGanados;
-    }
 
     public int getPuntosBatalla() {
         return puntosBatalla;
     }
 
-    public void setCombatesPerdidos(int combatesPerdidos) {
-        this.combatesPerdidos = combatesPerdidos;
-    }
+
 
     public void setPuntosBatalla(int puntosBatalla) {
         this.puntosBatalla = puntosBatalla;

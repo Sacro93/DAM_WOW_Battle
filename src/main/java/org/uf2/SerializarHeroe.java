@@ -5,7 +5,7 @@ import java.io.*;
 public class SerializarHeroe {
 
     // Nombre fijo del archivo para serializar los héroes
-    private static final String NOMBRE_ARCHIVO = "listadoHeroesx.ser";
+    private static final String NOMBRE_ARCHIVO = "listadoHeroesPrueba.ser";
 
     public static void serializarHeroes(DatosHeroes datosHeroes) {
         try (FileOutputStream archivo = new FileOutputStream(NOMBRE_ARCHIVO);
