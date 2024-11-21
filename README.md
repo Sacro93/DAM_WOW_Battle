@@ -1,5 +1,7 @@
 # Combate Épico de Héroes: Desafío en la Arena - Edición World of Warcraft
 
+# Explicacion del codigo en el Readme de la carpeta "src/main/java/org/uf2 "
+
 ## Descripción
 Entra en un mundo lleno de magia, fuerza y estrategia, donde los héroes más poderosos de Azeroth se enfrentan en combates épicos. ¿Serás capaz de guiar a tu Druida, Arquemaga, Guerrero Orco o Paladín hacia la victoria en la arena?
 
