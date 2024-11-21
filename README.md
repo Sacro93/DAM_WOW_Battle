@@ -142,9 +142,9 @@ El cosntructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como 
 
 # Metodos: 
 
-  numeroHeroe(int numero)  =>  permite acceder a los héroes por su indice propio.
+###  numeroHeroe(int numero)  =>  permite acceder a los héroes por su indice propio.
   
-  ## personajeExistente(Heroe comparar) => Comprueba si un heroe ya existe en las listas.
+  ### personajeExistente(Heroe comparar) => Comprueba si un heroe ya existe en las listas.
   
   ## listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .
   
