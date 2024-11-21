@@ -146,15 +146,15 @@ El constructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como 
   
 - personajeExistente(Heroe comparar) => Comprueba si un heroe ya existe en las listas.
   
-  - listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .
+- listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .
   
-  - listarPersonajes()' => imprime una lista numerada de los personajes asi es mas facil seleccionarlos y no tener error de escritura al escribir por consola el nombre ( inconvenientes previos al ingresarlos por nombre)
+- listarPersonajes()' => imprime una lista numerada de los personajes asi es mas facil seleccionarlos y no tener error de escritura al escribir por consola el nombre ( inconvenientes previos al ingresarlos por nombre)
  
-  - buscarHeroeNombre(String nombre) ' => metodo sin uso dado que me traia conflicto al escribir por nombre(indicado anteriormente). 
+- buscarHeroeNombre(String nombre) ' => metodo sin uso dado que me traia conflicto al escribir por nombre(indicado anteriormente). 
   
-  - eliminarPersonajes(String nombreEliminar) => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.
+- eliminarPersonajes(String nombreEliminar) => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.
   
-  - superPoder(int numeroElegido) =>  metodo que aplica superpoder a un heroe por indice. *2
+- superPoder(int numeroElegido) =>  metodo que aplica superpoder a un heroe por indice. *2
 
 
  ### `2*` Orientacion para funcion superPoder : 
@@ -165,7 +165,7 @@ El constructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como 
 
 # Clase Batalla
 
-## La clase Batalla se encarga de gestionar las peleas entre dos heroes
+## La clase Batalla se encarga de gestionar las peleas entre dos heroes :
 
 `batalla(Heroe heroe1, Heroe heroe2)'`
 
@@ -175,18 +175,21 @@ El constructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como 
         int suerteDelHeroe1 = suerteRandom.nextInt(10) + 1; => Sumo 1, para que el rango este entre 1 y 10. Sino estaba entre 0 y 9.
         int suerteDelHeroe2 = suerteRandom.nextInt(10) + 1;
       
-### Combate en rondas  mientras los los heroes tengan puntos de vida mayores a 0 .  Se tiene en cuenta la fuerza,agilidad  y el 'factor suerte'. (Los puntos de vida se actualizan por cada ronda.)
+ Combate en rondas  mientras los los heroes tengan puntos de vida mayores a 0 .  Se tiene en cuenta la fuerza,agilidad  y el 'factor suerte'. (Los puntos de vida se actualizan por cada ronda.)
       
 
 ## Como se calculan los ataques de ambos heroes 
-      ` 
+       
       int ataqueHeroe1 = (int) ((heroe1.getFuerza() + heroe1.getAgilidad() + suerteDelHeroe1) / 2); 
       int ataqueHeroe2 = (int) ((heroe2.getFuerza() + heroe2.getAgilidad() + suerteDelHeroe2) / 2);
-      `
+      
 
 ### Orientacion para esta clase : 
+
 https://es.stackoverflow.com/questions/5390/como-generar-n%C3%BAmeros-aleatorios-dentro-de-un-rango-de-valores
+
 https://aprenderaprogramar.com/foros/index.php?topic=7889.0
+
 https://aprenderaprogramar.com/foros/index.php?topic=7893.0
 
 
@@ -194,16 +197,16 @@ https://aprenderaprogramar.com/foros/index.php?topic=7893.0
 
 Utilizo la clase 'SerializarHeroe' para deserializar los datos de los heroes desde un archivo.
 
-    '
+    
       SerializarHeroe serializarHeroe = new SerializarHeroe(); 
       DatosHeroes datosHeroes = serializarHeroe.deserializarHeroes();
-    '
+    
 
 si hay datos nulos indico al sistema que inicialice nuevos datos de heroes`DatosHeroes()`
 
 # Menu interactivo  con un bucle While.
 
-### opciones : 
+### Opciones : 
 
 1. Crear Personaje: Llama al metodo 'crearHeroe()' de la clase Heroe para crear un nuevo héroe y lo serializa.
 
