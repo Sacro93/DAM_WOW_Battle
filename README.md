@@ -1,251 +1,184 @@
-# Combate Épico de Héroes: Desafío en la Arena - Edición World of Warcraft
+# ⚔️ Epic Hero Battle: Arena Challenge - World of Warcraft Edition
 
-## Descripción
-Entra en un mundo lleno de magia, fuerza y estrategia, donde los héroes más poderosos de Azeroth se enfrentan en combates épicos. ¿Serás capaz de guiar a tu Druida, Arquemaga, Guerrero Orco o Paladín hacia la victoria en la arena?
+## 🧙‍♂️ Description
+Step into a world of **magic, strength, and strategy**, where Azeroth's most powerful heroes face off in **epic battles**.
 
-Prepara a tus personajes, forja su destino seleccionando cuidadosamente sus atributos y habilidades, y enfréntate a rivales temibles en una batalla por la gloria. Cada combate te hará más fuerte, pero también probará los límites de tu héroe. Gana combates, mejora tus estadísticas y demuestra quién es el más poderoso en este Desafío en la Arena.
+Will you guide your **Druid**, **Archmage**, **Orc Warrior**, or **Paladin** to victory in the arena?
 
-Crea, lucha y triunfa en un mundo donde solo los mejores sobreviven. ¿Tienes lo que se necesita para convertirte en el campeón de Azeroth? ¡El destino de la arena está en tus manos!
+Prepare your characters, forge their destiny by selecting their **attributes and abilities**, and face fearsome opponents in the battle for glory. Each fight makes your hero stronger — but also tests their limits. Win battles, improve stats, and prove who’s the strongest in this Arena Challenge.
 
-## Implementación de los Personajes
+**Create, fight, and triumph** in a world where only the best survive. Do you have what it takes to become the **Champion of Azeroth**?
 
-### 1. Druida
-- **Atributos**:
-  - Nombre
-  - Fuerza: Entre 7 y 9 (valor aleatorio).
-  - Agilidad: Entre 5 y 8 (valor aleatorio).
-  - Inteligencia: Entre 4 y 7 (valor aleatorio).
-  - Puntos de Vida (PV): Entre 70 y 90 (valor aleatorio).
-  - Combates ganados: Inicialmente 0.
-  - Combates perdidos: Inicialmente 0.
-  - Puntos de batalla: Inicialmente 100.
+---
 
-### 2. Arquemaga
-- **Atributos**:
-  - Nombre
-  - Inteligencia: Entre 8 y 10 (valor aleatorio).
-  - Resistencia Arcana: Entre 5 y 8 (valor aleatorio).
-  - Agilidad: Entre 4 y 7 (valor aleatorio).
-  - Puntos de Vida (PV): Entre 60 y 80 (valor aleatorio).
-  - Combates ganados: Inicialmente 0.
-  - Combates perdidos: Inicialmente 0.
-  - Puntos de batalla: Inicialmente 100.
+## 🧝‍♀️ Character Implementation
 
-### 3. Guerrero Orco
-- **Atributos**:
-  - Nombre
-  - Fuerza: Entre 6 y 8 (valor aleatorio).
-  - Defensa: Entre 4 y 7 (valor aleatorio).
-  - Agilidad: Entre 3 y 6 (valor aleatorio).
-  - Puntos de Vida (PV): Entre 80 y 100 (valor aleatorio).
-  - Combates ganados: Inicialmente 0.
-  - Combates perdidos: Inicialmente 0.
-  - Puntos de batalla: Inicialmente 100.
+### 1. **Druid**
+- **Name**
+- **Strength**: Random value between 7 and 9
+- **Agility**: Random value between 5 and 8
+- **Intelligence**: Random value between 4 and 7
+- **Health Points (HP)**: Random value between 70 and 90
+- **Battles Won**: Initially 0
+- **Battles Lost**: Initially 0
+- **Battle Points**: Initially 100
 
-## Enunciado
+### 2. **Archmage**
+- **Name**
+- **Intelligence**: Random value between 8 and 10
+- **Arcane Resistance**: Random value between 5 and 8
+- **Agility**: Random value between 4 and 7
+- **Health Points (HP)**: Random value between 60 and 80
+- **Battles Won**: Initially 0
+- **Battles Lost**: Initially 0
+- **Battle Points**: Initially 100
 
-El programa debe crear un archivo serializable donde se registre toda la información de los personajes. Se deben crear 4 personajes iniciales de cada tipo (los nombres deben coincidir con la temática del juego World of Warcraft). Después de la creación de los personajes, el programa guardará esta información en el archivo serializado creado inicialmente. 
+### 3. **Orc Warrior**
+- **Name**
+- **Strength**: Random value between 6 and 8
+- **Defense**: Random value between 4 and 7
+- **Agility**: Random value between 3 and 6
+- **Health Points (HP)**: Random value between 80 and 100
+- **Battles Won**: Initially 0
+- **Battles Lost**: Initially 0
+- **Battle Points**: Initially 100
 
-## Opciones del Programa
+---
 
-1. **Crear Personaje**: El programa leerá los personajes del archivo y permitirá crear un nuevo personaje, seleccionando el tipo y generando los atributos correspondientes de forma aleatoria. Después de crear el nuevo personaje, actualizará la información del archivo.
+## 🧾 Project Features
 
-2. **Borrar Personaje**: El programa leerá los personajes del archivo y permitirá eliminar un personaje existente. Una vez eliminado, actualizará la información del archivo.
+### 🔒 Character Serialization
+- The program creates a **serializable file** to store all hero data.
+- Initializes with **4 default characters** per class (names inspired by **World of Warcraft**).
+- After creation, characters are saved in the serialized file.
 
-3. **Listar Personajes**: El programa leerá los personajes del archivo y mostrará todos los atributos de los personajes registrados, incluyendo nombre, atributos, combates ganados y perdidos, y puntos de batalla.
+---
 
-4. **SuperPoder**: El programa leerá los personajes del archivo y permitirá añadir 100 puntos a la fuerza y a la inteligencia de un personaje seleccionado. Esta opción tendrá un costo de puntos de batalla (por ejemplo, 50 puntos de batalla), y una vez modificados los atributos, actualizará la información del archivo.
+## 🕹️ Program Options
 
-5. **Batalla**: Permite que los personajes se enfrenten en una batalla épica en la arena.
-   - El jugador deberá seleccionar dos personajes de la lista para que se enfrenten.
-   
-   ### Mecánica del combate:
-   - Cada personaje tendrá sus atributos base (fuerza, agilidad, inteligencia) y su PV (puntos de vida).
-   - Antes de iniciar la batalla, se generará un valor de "suerte" aleatorio para cada personaje (entre 1 y 10) que influirá en el resultado del combate.
-   - Durante el combate, se realizará una serie de rondas en las que se evaluarán las características de cada personaje:
-     1. La fuerza y agilidad influirán en los ataques físicos.
-     2. La inteligencia influirá en los ataques mágicos.
-     3. Los puntos de vida (PV) disminuirán con cada ataque recibido.
-   - La suerte añadirá un factor de aleatoriedad al combate, determinando cuánto se potencia el ataque o la defensa en cada ronda.
-   - Después de un número determinado de rondas o cuando uno de los personajes pierda todos sus puntos de vida, se declarará un ganador.
+### ➕ Create Character
+- Loads current characters from the file.
+- Allows creation of a new hero by selecting the class and generating random attributes.
+- Updates the file with the new data.
 
-   ### Resultado del combate:
-   - El ganador verá incrementados sus "combates ganados" y recibirá un bono de puntos de batalla (por ejemplo, 50 puntos de batalla adicionales).
-   - El perdedor verá incrementados sus "combates perdidos" y no recibirá puntos de batalla adicionales.
-   - El resultado del combate se actualizará en el archivo CSV.
-   - **Opcional**: Puedes añadir la posibilidad de que el perdedor recupere puntos de vida en futuras batallas o que el ganador tenga una pequeña mejora en sus atributos.
+### ❌ Delete Character
+- Loads existing characters.
+- Deletes a selected character by name.
+- Saves updated data to file.
 
-6. **Salir**: Cierra el programa.
+### 📜 List Characters
+- Displays all characters and their attributes:
+  - Name, stats, battle history, and battle points.
 
-### Nota Importante
-- Si la práctica se realiza sin utilizar archivos, la calificación será un 0.
-- **Advertencia**: Cualquier uso de inteligencia artificial para resolver la práctica resultará en un 0 en la nota. Solo se pueden utilizar las técnicas aprendidas en clase.
+### 💥 SuperPower
+- Adds **+100 strength and intelligence** to a selected hero.
+- Costs **50 battle points**.
+- Attributes are updated and saved to the file.
+
+### ⚔️ Battle
+- Select two heroes to engage in combat.
+- **Combat Mechanics**:
+  - Each hero uses strength, agility, intelligence, and health.
+  - A random **luck factor (1–10)** influences battle outcome.
+  - Attacks are calculated based on:
+    - **Physical**: Strength + Agility
+    - **Magical**: Intelligence
+    - **Luck** modifies attacks/defenses per round.
+  - The fight continues over several rounds or until a hero’s HP reaches zero.
+
+- **Result**:
+  - Winner: Gains +1 battle won and +50 battle points.
+  - Loser: Gains +1 battle lost, no battle points.
+  - Outcome is saved in the CSV file.
+
+> _Optional_: The loser can recover HP in future battles, and the winner can receive minor stat boosts.
+
+### 🚪 Exit
+- Exits the program.
+
+---
+
+## ⚠️ Important Notes
+
+- ⚠️ Submitting the project **without using file storage results in a grade of 0**.
+- ⚠️ **Using AI tools** to solve the assignment will also result in a **0**. Only class-taught techniques are allowed.
+
+---
+
+## 🔍 Code Breakdown
+
+### 🧬 `Heroe` Class
+- Implements `Serializable`.
+- Core attributes and methods:
+  - Randomized stats using `Random()`.
+  - Static methods: `fuerzaHeroe()`, `defensaHeroe()`, etc.
+  - Battle tracking methods:  
+    - `sumarCombatesGanados()`  
+    - `sumarCombatesPerdidos()`  
+    - `sumarPuntosDeBatalla()`
+
+### 🛡️ Subclasses
+- All extend `Heroe` and implement `Serializable`:
+  - `Druida`, `Arquemaga`, `GuerreroOrco`
+
+### 💾 Serialization
+- `SerializarHeroe` handles reading/writing hero data using:
+  ```java
+  private static final String NOMBRE_ARCHIVO = "listadoHeroesx.ser";
+
+📂 DatosHeroes Class
+
+Stores all heroes using lists:
+
+static List<Druida> druidas = new ArrayList<>();
+static List<Arquemaga> arquemagas = new ArrayList<>();
+static List<GuerreroOrco> guerreros = new ArrayList<>();
+
+Methods:
+
+numeroHeroe(int): Access hero by index.
+
+personajeExistente(Heroe): Check if hero exists.
+
+listarPersonajesNombre(): Print hero names.
+
+listarPersonajes(): Print numbered list for easier selection.
+
+eliminarPersonajes(String nombre): Delete hero by name.
+
+superPoder(int index): Add superpower to hero.
+
+🥊 Batalla Class
+
+Handles turn-based fights:
+
+int ataqueHeroe1 = (heroe1.getFuerza() + heroe1.getAgilidad() + suerte1) / 2;
+
+Battle continues while both heroes have HP > 0.
+
+Damage is calculated using:
+
+Base stats
+
+Luck factor (1–10)
+
+🧠 Theory Highlights
+
+Serialization: Convert objects to bytes to store on disk.
+
+Deserialization: Reconstruct object from stored bytes.
+# Menu interactivo  con un bucle While.
 
 
-# WOW-Batalla-Heroes
+💡 References & Resources
 
-## Descripción del codigo parte por parte
+https://es.stackoverflow.com/questions/264638/deserialize-en-java
 
-En este proyecto, comencé por la creación de la clase `Heroe`, que implementa la interfaz `Serializable`.
-La clase `Heroe` incluye una serie de atributos y métodos esenciales para el funcionamiento.
+https://es.stackoverflow.com/questions/250311
 
-Para asignar valores aleatorios a los atributos, utilicé un método `Random()` que se aplica a los métodos estáticos como `fuerzaHeroe()`, 
-`defensaHeroe()`,
-`agilidadHeroe()`,
-`inteligenciaHeroe()`, 
-`resistenciaHeroe()` y `puntosVidaHeroe()`. 
-Estos métodos generan valores aleatorios que se asignan a los atributos del héroe al momento de su creación.
-
-### Otros métodos importantes en la clase `Heroe` que  inclui:
-
- `sumarCombatesGanados()`: Incrementa el conteo de combates ganados .
- 
-  `sumarCombatesPerdidos()`: Incrementa el conteo de combates perdidos.
- 
-  `sumarPuntosDeBatalla()`: Suma puntos de batalla al héroe.
-
-# Creación de Héroes
-El método `crearHeroe()` toma como parámetro un objeto de la clase `DatosHeroes` (queimplementa `Serializable`). 
-Este método utiliza una estructura `switch` para elegir un nombre adecuado según los tres tipos de héroes existentes: Druida, Arquemaga y Guerrero Orco.
-
-# Creación de Clases de Héroes
-Se crearon varias subclases que extienden la clase `Heroe` y que también implementan la interfaz `Serializable`. 
-Las subclases son `GuerreroOrco`,`Druida` y `Arquemaga`.  
-
-# Serializacion y deserializacion 
-La clase `SerializarHeroe` se encarga de la serialización y deserialización de objetos de la clase DatosHeroes.
-
-# Teoria : 
-`La serialización es el proceso de convertir un objeto en una secuencia de bytes para que pueda ser guardado en un archivo,
-mientras que la deserialización es el proceso inverso, permitiendo recuperar el objeto original a partir de los bytes almacenados`
-
-Se recomienda crear una constante que define el nombre del archivo en donde almacenare los datos serializados
-
-** ` private static final String NOMBRE_ARCHIVO = "listadoHeroesx.ser";` **
- 
-Se consulta en Stack oVerflow `*1`, se recomienda  verificar si el archivo existe y sino se genera/ crea una nueva instancia.
-
-`*1` https://es.stackoverflow.com/questions/264638/deserialize-en-java 
-
-# Clase DatosHeroes
-
-La clase DatosHeroes tiene como fin gestionar los datos de los distintos tipos de heroes en el programa.Se implementa Serializable para permitir la 'serializacion',
-y asi facilitar la manipulacion y recuperacion de los datosde los heroes.
-
-## Listas que almacenan las instancias de los distintos tipos de heroes : 
-
-        static List<Druida> druidas = new ArrayList<>(); 
-        static List<Arquemaga> arquemagas = new ArrayList<>(); 
-        static List<GuerreroOrco> guerreros = new ArrayList<>();
-
-El constructor `DatosHeroes()` llama  al metodo `cargarDatosHeroes()` que, como su nombre lo indica, me permite inicializar las listas con datos precargados.
-
-# Metodos: 
-
--  numeroHeroe(int numero)  =>  permite acceder a los héroes por su indice propio.
-  
-- personajeExistente(Heroe comparar) => Comprueba si un heroe ya existe en las listas.
-  
-- listarPersonajesNombre()' => Imprime los nombres de los heroes existentes en las listas .
-  
-- listarPersonajes()' => imprime una lista numerada de los personajes asi es mas facil seleccionarlos y no tener error de escritura al escribir por consola el nombre ( inconvenientes previos al ingresarlos por nombre)
- 
-- buscarHeroeNombre(String nombre) ' => metodo sin uso dado que me traia conflicto al escribir por nombre(indicado anteriormente). 
-  
-- eliminarPersonajes(String nombreEliminar) => decidi no eliminar por numero de indice de la listarPersonajes y mantuve eliminar por nombre de personaje.
-  
-- superPoder(int numeroElegido) =>  metodo que aplica superpoder a un heroe por indice. *2
-
-
- ### `2*` Orientacion para funcion superPoder : 
-  
- - https://es.stackoverflow.com/questions/250311/como-eliminar-un-nodo-por-posici%c3%b3n-indice-de-una-lista-simple  
-  
- - https://barcelonageeks.com/eliminar-elemento-del-indice-especificado-en-java-arraylist/
-
-# Clase Batalla
-
-## La clase Batalla se encarga de gestionar las peleas entre dos heroes :
-
-`batalla(Heroe heroe1, Heroe heroe2)'`
-
-### La clase Random permite el factor 'suerte' que se solicitaba 
-      
-        Random suerteRandom = new Random();
-        int suerteDelHeroe1 = suerteRandom.nextInt(10) + 1; => Sumo 1, para que el rango este entre 1 y 10. Sino estaba entre 0 y 9.
-        int suerteDelHeroe2 = suerteRandom.nextInt(10) + 1;
-      
- Combate en rondas  mientras los los heroes tengan puntos de vida mayores a 0 .  Se tiene en cuenta la fuerza,agilidad  y el 'factor suerte'. (Los puntos de vida se actualizan por cada ronda.)
-      
-
-## Como se calculan los ataques de ambos heroes 
-       
-      int ataqueHeroe1 = (int) ((heroe1.getFuerza() + heroe1.getAgilidad() + suerteDelHeroe1) / 2); 
-      int ataqueHeroe2 = (int) ((heroe2.getFuerza() + heroe2.getAgilidad() + suerteDelHeroe2) / 2);
-      
-
-### Orientacion para esta clase : 
-
-https://es.stackoverflow.com/questions/5390/como-generar-n%C3%BAmeros-aleatorios-dentro-de-un-rango-de-valores
+https://barcelonageeks.com/eliminar-elemento-del-indice-especificado-en-java-arraylist/
 
 https://aprenderaprogramar.com/foros/index.php?topic=7889.0
 
 https://aprenderaprogramar.com/foros/index.php?topic=7893.0
 
-
-# Metodo Main 
-
-Utilizo la clase 'SerializarHeroe' para deserializar los datos de los heroes desde un archivo.
-
-    
-      SerializarHeroe serializarHeroe = new SerializarHeroe(); 
-      DatosHeroes datosHeroes = serializarHeroe.deserializarHeroes();
-    
-
-si hay datos nulos indico al sistema que inicialice nuevos datos de heroes`DatosHeroes()`
-
-# Menu interactivo  con un bucle While.
-
-### Opciones : 
-![Menu](https://github.com/user-attachments/assets/60d50d86-d275-431a-bee7-ef98a3d26e07)
-
-1. Crear Personaje: Llama al metodo 'crearHeroe()' de la clase Heroe para crear un nuevo héroe y lo serializa.
-
-![Crear Personaje_opc1](https://github.com/user-attachments/assets/12bf9315-297e-4f5d-b9d9-ab27ea147c60)
-
-2. Borrar personaje: Lista los personajes por nombre, permite al usuario seleccionar uno para eliminar.
-No indique que se actualice por indice ya que estaba teniendo inconvenientes para realizarlo.
-
-![borrarHeroe_opc2](https://github.com/user-attachments/assets/2fca5996-08c9-4c27-a5d0-5b632ba02aea)
-
-3. Listar Personajes: Muestra todos los heroes
-   
-![listarPersonajes_opcion3](https://github.com/user-attachments/assets/8f4d9e5b-4a37-49c2-a24e-4d5e15f08abc)
-
-4. Añade Superpoderes: Aplica un superpoder a un héroe seleccionado por su número/indice en la lista.
-   
-![superPoder_opcion4](https://github.com/user-attachments/assets/cb311d7d-1346-4007-be0b-68114810eb73)
-
-5. Batalla: Organiza una batalla entre dos heroes seleccionados por el numero que puedes ver en la lista.
-   
-### Parte 1
-
-![Batalla_opcion5_p1](https://github.com/user-attachments/assets/47cc800b-ccca-4e5f-b62d-582c4e897c0d)
-
-### Parte 2
-
-![Batalla_opcion5_p2](https://github.com/user-attachments/assets/7225a597-be23-4d17-89e9-7eceff72880c)
-
-### Parte 3
-
-![Batalla_opcion5_p3](https://github.com/user-attachments/assets/d4d4de11-22e3-480e-a536-f49c94bef7d9)
-
-### Parte 4
-
-![Batalla_opcion5_p4](https://github.com/user-attachments/assets/e2a9063c-e520-4f6a-864a-3f0e99eded3c)
-
-
-6. Salir: Finaliza el programa.
-
-
-  
