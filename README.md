@@ -129,13 +129,15 @@ Prepare your characters, forge their destiny by selecting their **attributes and
 📂 DatosHeroes Class
 
 Stores all heroes using lists:
-
+```
 static List<Druida> druidas = new ArrayList<>();
 static List<Arquemaga> arquemagas = new ArrayList<>();
 static List<GuerreroOrco> guerreros = new ArrayList<>();
 
-Methods:
+```
+🛡️Methods:
 
+```
 numeroHeroe(int): Access hero by index.
 
 personajeExistente(Heroe): Check if hero exists.
@@ -148,13 +150,17 @@ eliminarPersonajes(String nombre): Delete hero by name.
 
 superPoder(int index): Add superpower to hero.
 
+```
+
 🥊 Batalla Class
 
 Handles turn-based fights:
 
+```
 int ataqueHeroe1 = (heroe1.getFuerza() + heroe1.getAgilidad() + suerte1) / 2;
 
 Battle continues while both heroes have HP > 0.
+```
 
 Damage is calculated using:
 
